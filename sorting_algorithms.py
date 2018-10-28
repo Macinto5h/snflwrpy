@@ -55,7 +55,6 @@ class InsertionSort:
         self.sort(Application, Application.array)
 #todo: IntroSort
 #todo: LibrarySort
-#TODO: MergeSort
 class MergeSort:
     def merge(self, Application, list, p, q, r):
         left_length = q-p+1
@@ -100,6 +99,24 @@ class MergeSort:
 #todo: RadixSortLSD
 #todo: RadixSortMSD
 #todo: SelectionSort
+class SelectionSort:
+    def sort(self, Application, list):
+        length = len(list)
+        for i in range(length):
+            m = list[i] #smallest value variable
+            j = i + 1
+            swap_index = i
+            while (j < length):
+                if (list[j] < m):
+                    m = list[j]
+                    swap_index = j
+                j += 1
+            Application.update_canvas(list[swap_index],list[i],swap_index)
+            list[swap_index] = list[i]
+            Application.update_canvas(list[i], m, i)
+            list[i] = m
+    def __init__(self, Application):
+        self.sort(Application, Application.array)
 #todo: ShellSort
 #todo: SimplePancakeSort
 #todo: SmoothSort
