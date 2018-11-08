@@ -3,15 +3,20 @@
 #File to hold all of the sorting       #
 #algorithm classes                     #
 #Author: Macinto5h                     #
-#Last File Update: 10/27/2018          #
+#Last File Update: 11/07/2018          #
 ########################################
+class Sort:
+    def sort(self, Application, list):
+        print("ERROR: Superclass sort method invoked, must override")
+    def __init__(self,Application):
+        self.sort(Application, Application.array)
 #todo: BeadSort
 #todo: BinaryTreeSort
 #todo: BitonicSorter
 #todo: BlockSort
 #todo: BucketSort
 #todo: BurstSort
-class BubbleSort:
+class BubbleSort(Sort):
     def sort(self, Application, list):
         length = len(list)
         for index_0 in range(length):
@@ -22,9 +27,6 @@ class BubbleSort:
                     Application.update_canvas(temp,list[index_1],index_1)
                     list[index_1-1] = temp
                     Application.update_canvas(list[index_1],list[index_1-1],index_1-1)
-
-    def __init__(self, Application):
-        self.sort(Application, Application.array)
 #todo: CocktailSort
 #todo: CombSort
 #todo: CountingSort
@@ -35,7 +37,7 @@ class BubbleSort:
 #todo: GnomeSort
 #todo: Heapsort
 #TODO: InPlaceMergeSort
-class InsertionSort:
+class InsertionSort(Sort):
     def sort(self, Application, list):
         length = len(list)
         for index in range(1, length):
@@ -50,12 +52,9 @@ class InsertionSort:
             old_value = list[i+1]
             list[i+1] = k
             Application.update_canvas(old_value,k,i+1)
-
-    def __init__(self, Application):
-        self.sort(Application, Application.array)
 #todo: IntroSort
 #todo: LibrarySort
-class MergeSort:
+class MergeSort(Sort):
     def merge(self, Application, list, p, q, r):
         left_length = q-p+1
         right_length = r-q
@@ -88,18 +87,18 @@ class MergeSort:
 
     def sort(self, Application, list):
         self.merge_sort(Application, list, 0, len(list)-1)
-
-    def __init__(self, Application):
-        self.sort(Application, Application.array)
 #todo: OddEvenSort
 #todo: PostmanSort
-#TODO: QuickSort
+#todo: Quicksort
+#class QuickSort:
+    #def sort(self, Application, list):
+    #add stuff here
+    #def __init__(self,Application):
 #todo: PatienceSorting
 #todo: PigeonholeSort
 #todo: RadixSortLSD
 #todo: RadixSortMSD
-#todo: SelectionSort
-class SelectionSort:
+class SelectionSort(Sort):
     def sort(self, Application, list):
         length = len(list)
         for i in range(length):
@@ -115,8 +114,6 @@ class SelectionSort:
             list[swap_index] = list[i]
             Application.update_canvas(list[i], m, i)
             list[i] = m
-    def __init__(self, Application):
-        self.sort(Application, Application.array)
 #todo: ShellSort
 #todo: SimplePancakeSort
 #todo: SmoothSort
