@@ -61,6 +61,8 @@ class Application:
         elif (self.selected_algorithm.get() == "Selection Sort"):
             print ("Selection Sort!")
             sa.SelectionSort(self)
+        elif (self.selected_algorithm.get() == "Cocktail Sort"):
+            sa.CocktailSort(self)
         else:
             #print ("insertion sort!")
             sa.InsertionSort(self)
@@ -93,7 +95,7 @@ class Application:
         self.selected_algorithm = tk.StringVar(master)
         self.selected_algorithm.set("Insertion Sort")
 
-        self.option_menu = tk.OptionMenu(master, self.selected_algorithm, "Insertion Sort", "Bubble Sort", "Merge Sort", "Selection Sort")
+        self.option_menu = tk.OptionMenu(master, self.selected_algorithm, "Insertion Sort", "Bubble Sort", "Merge Sort", "Selection Sort", "Cocktail Sort")
         self.option_menu.pack()
 
         self.sort_button = tk.Button(master, text="Sort", command=self.sort_canvas)
