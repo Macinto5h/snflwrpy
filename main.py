@@ -4,7 +4,6 @@
 #to represent a sorted visual sequence #
 #                                      #
 #Author: Macinto5h                     #
-#Last Update: 10/26/2018               #
 ########################################
 import tkinter as tk
 import math
@@ -91,16 +90,24 @@ class Application:
         self.canvas = tk.Canvas(self.master, bg="white",height=self.canvas_height, width=self.canvas_height)
         self.draw_canvas()
         self.canvas.pack()
-        self.shuffle_button = tk.Button(master, text="Shuffle", command=self.shuffle_canvas)
+        self.algorithm_list = [
+            "Insertion Sort",
+            "Bubble Sort",
+            "Merge Sort",
+            "Selection Sort",
+            "Cocktail Sort"
+        ]
         self.selected_algorithm = tk.StringVar(master)
-        self.selected_algorithm.set("Insertion Sort")
-
-        self.option_menu = tk.OptionMenu(master, self.selected_algorithm, "Insertion Sort", "Bubble Sort", "Merge Sort", "Selection Sort", "Cocktail Sort")
+        self.selected_algorithm.set(self.algorithm_list[0])
+        self.option_menu = tk.OptionMenu(self.master,self.selected_algorithm,*self.algorithm_list)
         self.option_menu.pack()
 
-        self.sort_button = tk.Button(master, text="Sort", command=self.sort_canvas)
-        self.shuffle_button.pack()
-        self.sort_button.pack()
+        self.menubar = tk.Menu(self.master)
+        self.menubar.add_command(label="Shuffle", command=self.shuffle_canvas)
+        self.menubar.add_command(label="Sort", command=self.sort_canvas)
+
+        # display the menu
+        self.master.config(menu=self.menubar)
 
 def main():
     root = tk.Tk()

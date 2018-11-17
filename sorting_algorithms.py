@@ -3,7 +3,6 @@
 #File to hold all of the sorting       #
 #algorithm classes                     #
 #Author: Macinto5h                     #
-#Last File Update: 11/07/2018          #
 ########################################
 class Sort:
     def sort(self, Application, list):
@@ -27,7 +26,6 @@ class BubbleSort(Sort):
                     Application.update_canvas(temp,list[index_1],index_1)
                     list[index_1-1] = temp
                     Application.update_canvas(list[index_1],list[index_1-1],index_1-1)
-#todo: CocktailSort
 class CocktailSort(Sort):
     def sort(self, Application, list):
         swapped = True
