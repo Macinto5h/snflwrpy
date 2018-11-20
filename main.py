@@ -97,17 +97,16 @@ class Application:
             "Selection Sort",
             "Cocktail Sort"
         ]
-        self.selected_algorithm = tk.StringVar(master)
+        self.selected_algorithm = tk.StringVar(self.master)
         self.selected_algorithm.set(self.algorithm_list[0])
         self.option_menu = tk.OptionMenu(self.master,self.selected_algorithm,*self.algorithm_list)
         self.option_menu.pack()
 
         self.menubar = tk.Menu(self.master)
-        self.menubar.add_command(label="Shuffle", command=self.shuffle_canvas)
-        self.menubar.add_command(label="Sort", command=self.sort_canvas)
-
         # display the menu
         self.master.config(menu=self.menubar)
+        self.menubar.add_command(label="Shuffle", command=self.shuffle_canvas)
+        self.menubar.add_command(label="Sort", command=self.sort_canvas)
 
 def main():
     root = tk.Tk()
