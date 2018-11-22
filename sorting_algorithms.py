@@ -54,8 +54,20 @@ class CocktailSort(Sort):
 #todo: CubeSort
 #todo: CycleSort
 #todo: FlashSort
-#todo: FranceschinisMethod
-#todo: GnomeSort
+#todo: FranceschinisMethods
+class GnomeSort(Sort):
+    def sort(self, Application, list):
+        index = 0
+        while (index < len(list)):
+            if (index == 0 or list[index] >= list[index-1]):
+                index += 1
+            else:
+                temp = list[index]
+                list[index] = list[index-1]
+                Application.update_canvas(temp,list[index],index)
+                list[index-1] = temp
+                Application.update_canvas(list[index],list[index-1],index-1)
+                index -= 1
 #todo: Heapsort
 #TODO: InPlaceMergeSort
 class InsertionSort(Sort):

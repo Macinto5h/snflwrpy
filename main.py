@@ -62,6 +62,8 @@ class Application:
             sa.SelectionSort(self)
         elif (self.selected_algorithm.get() == "Cocktail Sort"):
             sa.CocktailSort(self)
+        elif (self.selected_algorithm.get() == "Gnome Sort"):
+            sa.GnomeSort(self)
         else:
             #print ("insertion sort!")
             sa.InsertionSort(self)
@@ -95,19 +97,19 @@ class Application:
             "Bubble Sort",
             "Merge Sort",
             "Selection Sort",
-            "Cocktail Sort"
+            "Cocktail Sort",
+            "Gnome Sort"
         ]
-        self.selected_algorithm = tk.StringVar(master)
+        self.selected_algorithm = tk.StringVar(self.master)
         self.selected_algorithm.set(self.algorithm_list[0])
         self.option_menu = tk.OptionMenu(self.master,self.selected_algorithm,*self.algorithm_list)
         self.option_menu.pack()
 
         self.menubar = tk.Menu(self.master)
-        self.menubar.add_command(label="Shuffle", command=self.shuffle_canvas)
-        self.menubar.add_command(label="Sort", command=self.sort_canvas)
-
         # display the menu
         self.master.config(menu=self.menubar)
+        self.menubar.add_command(label="Shuffle", command=self.shuffle_canvas)
+        self.menubar.add_command(label="Sort", command=self.sort_canvas)
 
 def main():
     root = tk.Tk()
