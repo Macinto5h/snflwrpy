@@ -147,7 +147,20 @@ class SelectionSort(Sort):
             list[swap_index] = list[i]
             Application.update_canvas(list[i], m, i)
             list[i] = m
-#todo: ShellSort
+class ShellSort(Sort):
+    def sort(self, Application, list):
+        gap = len(list)//2
+        while (gap > 0):
+            for i in range(gap,len(list)):
+                temp = list[i]
+                j = i
+                while j >= gap and list[j-gap] > temp:
+                    Application.update_canvas(list[j],list[j-gap],j)
+                    list[j] = list[j-gap]
+                    j -= gap
+                Application.update_canvas(list[j],temp,j)
+                list[j] = temp
+            gap //= 2
 #todo: SimplePancakeSort
 #todo: SmoothSort
 #todo: SortingNetwork
