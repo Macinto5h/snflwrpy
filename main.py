@@ -66,6 +66,8 @@ class Application:
             sa.GnomeSort(self)
         elif (self.selected_algorithm.get() == "Shell Sort"):
             sa.ShellSort(self)
+        elif (self.selected_algorithm.get() == "Radix Sort LSD"):
+            sa.RadixSortLSD(self)
         else:
             #print ("insertion sort!")
             sa.InsertionSort(self)
@@ -101,7 +103,8 @@ class Application:
             "Selection Sort",
             "Cocktail Sort",
             "Gnome Sort",
-            "Shell Sort"
+            "Shell Sort",
+            "Radix Sort LSD"
         ]
         self.selected_algorithm = tk.StringVar(self.master)
         self.selected_algorithm.set(self.algorithm_list[0])
