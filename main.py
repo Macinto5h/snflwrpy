@@ -12,9 +12,25 @@ import sorting_algorithms as sa #stores all the algorithm classes
 import sys
 
 class Application:
+    #Constants for Application are defined here....
+    total_items = 600
+    oval_diameter = 10
+    oval_distance = 12
+    algorithm_list = [
+        "Insertion Sort",
+        "Bubble Sort",
+        "Merge Sort",
+        "Selection Sort",
+        "Cocktail Sort",
+        "Gnome Sort",
+        "Shell Sort",
+        "Radix Sort LSD"
+    ]
+    canvas_height = 700
+
     def build_array(self):
         self.array = []
-        for index in range(self.oval_count):
+        for index in range(self.total_items):
             self.array.append(index)
 
     def degrees_to_radians(self, angle):
@@ -26,7 +42,7 @@ class Application:
         self.oval_array.clear()
         center_x = self.canvas_height/2
         center_y = center_x
-        for index in range(self.oval_count):
+        for index in range(self.total_items):
             r = self.oval_distance * math.sqrt(self.array[index]) #distance from center
             angle = index * 137.508   #angle
             offset_x = center_x + math.cos(self.degrees_to_radians(angle))*r
@@ -87,25 +103,12 @@ class Application:
 
     def __init__(self, master):
         self.master = master
-        self.oval_count = 600
-        self.oval_diameter = 10;
-        self.oval_distance = 12;
         self.build_array()
         self.oval_array = []
-        self.canvas_height=700
-        self.canvas = tk.Canvas(self.master, bg="white",height=self.canvas_height, width=self.canvas_height)
+
+        self.canvas = tk.Canvas(self.master, bg="#36454F",height=self.canvas_height, width=self.canvas_height, highlightthickness=0)
         self.draw_canvas()
         self.canvas.pack()
-        self.algorithm_list = [
-            "Insertion Sort",
-            "Bubble Sort",
-            "Merge Sort",
-            "Selection Sort",
-            "Cocktail Sort",
-            "Gnome Sort",
-            "Shell Sort",
-            "Radix Sort LSD"
-        ]
         self.selected_algorithm = tk.StringVar(self.master)
         self.selected_algorithm.set(self.algorithm_list[0])
         self.option_menu = tk.OptionMenu(self.master,self.selected_algorithm,*self.algorithm_list)
@@ -119,6 +122,8 @@ class Application:
 
 def main():
     root = tk.Tk()
+    root.configure(background="#36454F")
+    root.title("Sorting Algorithm Visualizer v0.0.1")
     sys.setrecursionlimit(1500)
     app = Application(root)
     root.mainloop()
