@@ -10,6 +10,7 @@ import math
 import random #needed for shuffle function
 import sorting_algorithms as sa #stores all the algorithm classes
 import sys
+import threading
 
 class Application:
     #Constants for Application are defined here....
@@ -24,7 +25,8 @@ class Application:
         "Cocktail Sort",
         "Gnome Sort",
         "Shell Sort",
-        "Radix Sort LSD"
+        "Radix Sort LSD",
+        "Stooge Sort"
     ]
     canvas_height = 700
 
@@ -68,25 +70,30 @@ class Application:
 
     def sort_canvas(self):
 
+        app = self
+
+        sort = sa.Sort()
+
         if (self.selected_algorithm.get() == "Bubble Sort"):
-            #print ("bubble sort!")
-            sa.BubbleSort(self)
+            sort = sa.BubbleSort()
+            
         elif (self.selected_algorithm.get() == "Merge Sort"):
-            sa.MergeSort(self)
+            sort = sa.MergeSort()
         elif (self.selected_algorithm.get() == "Selection Sort"):
-            print ("Selection Sort!")
-            sa.SelectionSort(self)
+            sort = sa.SelectionSort()
         elif (self.selected_algorithm.get() == "Cocktail Sort"):
-            sa.CocktailSort(self)
+            sort = sa.CocktailSort()
         elif (self.selected_algorithm.get() == "Gnome Sort"):
-            sa.GnomeSort(self)
+            sort = sa.GnomeSort()
         elif (self.selected_algorithm.get() == "Shell Sort"):
-            sa.ShellSort(self)
+            sort = sa.ShellSort()
         elif (self.selected_algorithm.get() == "Radix Sort LSD"):
-            sa.RadixSortLSD(self)
+            sort = sa.RadixSortLSD()
+        elif (self.selected_algorithm.get() == "Stooge Sort"):
+            sort = sa.StoogeSort()
         else:
-            #print ("insertion sort!")
-            sa.InsertionSort(self)
+            sort = sa.InsertionSort()
+        threading.Thread(target=sort.sort(app, app.array)).start()
 
     def update_canvas(self, old_value, new_value, index):
         center_x = self.canvas_height/2
@@ -124,6 +131,7 @@ def main():
     root = tk.Tk()
     root.configure(background="#36454F")
     root.title("Sorting Algorithm Visualizer v0.0.1")
+    root.resizable(width=False, height=False)
     sys.setrecursionlimit(1500)
     app = Application(root)
     root.mainloop()

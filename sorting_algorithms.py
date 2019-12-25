@@ -4,17 +4,20 @@
 #algorithm classes                     #
 #Author: Macinto5h                     #
 ########################################
+import math
+
 class Sort:
     def sort(self, Application, list):
         print("ERROR: Superclass sort method invoked, must override")
-    def __init__(self,Application):
-        self.sort(Application, Application.array)
+    # def __init__(self,Application):
+        # self.sort(Application, Application.array)
 #todo: BeadSort
 #todo: BinaryTreeSort
 #todo: BitonicSorter
 #todo: BlockSort
 #todo: BucketSort
 #todo: BurstSort
+
 class BubbleSort(Sort):
     def sort(self, Application, list):
         length = len(list)
@@ -26,6 +29,7 @@ class BubbleSort(Sort):
                     Application.update_canvas(temp,list[index_1],index_1)
                     list[index_1-1] = temp
                     Application.update_canvas(list[index_1],list[index_1-1],index_1-1)
+
 class CocktailSort(Sort):
     def sort(self, Application, list):
         swapped = True
@@ -129,7 +133,6 @@ class MergeSort(Sort):
     #def __init__(self,Application):
 #todo: PatienceSorting
 #todo: PigeonholeSort
-#todo: RadixSortLSD
 class RadixSortLSD(Sort):
     def sort(self,Application,list):
         maxValue = max(list)
@@ -192,6 +195,24 @@ class ShellSort(Sort):
 #todo: SpaghettiSort
 #todo: SpreadSort
 #todo: StoogeSort
+class StoogeSort(Sort):
+    def sort(self, Application, list):
+        self.stoogeSortHelper(Application, list, 0, len(list) - 1)
+
+    def stoogeSortHelper(self, Application, list, i, j):
+        if (list[i] > list[j]):
+            tmp = list[i]
+            Application.update_canvas(list[i],list[j],i)
+            list[i] = list[j]
+            Application.update_canvas(list[j],tmp,j)
+            list[j] = tmp
+        
+        if ((j - i + 1) > 2):
+            # t = -(-(j - i + 1) // 3) 
+            t = (j - i + 1) // 3
+            self.stoogeSortHelper(Application, list, i, j - t)
+            self.stoogeSortHelper(Application, list, i + t, j)
+            self.stoogeSortHelper(Application, list, i, j - t)   
 #todo: StrandSort
 #todo: TimSort
 #todo: TournamentSort
