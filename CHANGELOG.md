@@ -6,8 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- .gitignore
-- Changelog
+- .gitignore file
+- Changelog file
+- .editorconfig file
 ### Changed
 ### Deprecated
 ### Removed
