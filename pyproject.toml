@@ -9,7 +9,6 @@ repository = "https://github.com/Macinto5h/vogel-sorter"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-tk = "^0.1.0"
 
 [tool.poetry.dev-dependencies]
 
