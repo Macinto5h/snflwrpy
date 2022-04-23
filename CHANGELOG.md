@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - .gitignore file
 - Changelog file
 - .editorconfig file
+- Add poetry package and dependency manager
 ### Changed
 ### Deprecated
 ### Removed
