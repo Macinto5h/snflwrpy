@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "vogel-sorter"
+version = "0.0.3"
+description = "Visually demonstrates the function of sorting algorithms using Vogel's Model."
+authors = ["Macallan Camara <44030647+Macinto5h@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/Macinto5h/vogel-sorter"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
