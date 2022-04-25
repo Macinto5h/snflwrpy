@@ -9,6 +9,7 @@ repository = "https://github.com/Macinto5h/vogel-sorter"
 
 [tool.poetry.dependencies]
 python = "^3.8"
+pytest = "^7.1.2"
 
 [tool.poetry.dev-dependencies]
 
