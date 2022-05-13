@@ -1,0 +1,16 @@
+from vogel_sorter.sort_type import SortType
+
+def test_sort_type_returns_list_of_all_values_when_called():
+    expected_list = [
+        SortType.BUBBLE.value,
+        SortType.COCKTAIL.value,
+        SortType.GNOME.value,
+        SortType.INSERTION.value,
+        SortType.MERGE.value,
+        SortType.RADIX_LSD.value,
+        SortType.SELECTION.value,
+        SortType.SHELL.value,
+        SortType.STOOGE.value
+    ]
+
+    assert SortType.getValues() == expected_list
