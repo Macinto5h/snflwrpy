@@ -8,27 +8,27 @@ from vogel_sorter.sorters.radix_lsd_sorter import RadixLSDSorter
 from vogel_sorter.sorters.selection_sorter import SelectionSorter
 from vogel_sorter.sorters.shell_sorter import ShellSorter
 from vogel_sorter.sorters.stooge_sorter import StoogeSorter
-from vogel_sorter.sorter_names import *
+from vogel_sorter.sort_type import SortType
 
 class SorterFactory():
     def get_sorter(self, sorter_name):
-        if (sorter_name == BUBBLE_SORTER_NAME):
+        if (sorter_name == SortType.BUBBLE.value):
             return BubbleSorter()
-        elif (sorter_name == COCKTAIL_SORTER_NAME):
+        elif (sorter_name == SortType.COCKTAIL.value):
             return CocktailSorter()
-        elif (sorter_name == GNOME_SORTER_NAME):
+        elif (sorter_name == SortType.GNOME.value):
             return GnomeSorter()
-        elif (sorter_name == INSERTION_SORTER_NAME):
+        elif (sorter_name == SortType.INSERTION.value):
             return InsertionSorter()
-        elif (sorter_name == MERGE_SORTER_NAME):
+        elif (sorter_name == SortType.MERGE.value):
             return MergeSorter()
-        elif (sorter_name == RADIX_LSD_SORTER_NAME):
+        elif (sorter_name == SortType.RADIX_LSD.value):
             return RadixLSDSorter()
-        elif (sorter_name == SELECTION_SORTER_NAME):
+        elif (sorter_name == SortType.SELECTION.value):
             return SelectionSorter()
-        elif (sorter_name == SHELL_SORTER_NAME):
+        elif (sorter_name == SortType.SHELL.value):
             return ShellSorter()
-        elif (sorter_name == STOOGE_SORTER_NAME):
+        elif (sorter_name == SortType.STOOGE.value):
             return StoogeSorter()
 
         return Sorter()

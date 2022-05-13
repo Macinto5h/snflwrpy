@@ -89,8 +89,13 @@ class Application:
         self.canvas.move(self.oval_array[index], offset_x, offset_y)
         self.canvas.update_idletasks()
 
-    def __init__(self, master):
-        self.master = master
+    def start(self, algorithm):
+        self.master = tk.Tk()
+        self.master.configure(background="#36454F")
+        self.master.title("Sorting Algorithm Visualizer v0.0.1")
+        self.master.resizable(width=False, height=False)
+        sys.setrecursionlimit(1500)
+
         self.build_array()
         self.oval_array = []
 
@@ -98,7 +103,7 @@ class Application:
         self.draw_canvas()
         self.canvas.pack()
         self.selected_algorithm = tk.StringVar(self.master)
-        self.selected_algorithm.set(self.algorithm_list[0])
+        self.selected_algorithm.set(algorithm)
         self.option_menu = tk.OptionMenu(self.master,self.selected_algorithm,*self.algorithm_list)
         self.option_menu.pack()
 
@@ -108,13 +113,7 @@ class Application:
         self.menubar.add_command(label="Shuffle", command=self.shuffle_canvas)
         self.menubar.add_command(label="Sort", command=self.sort_canvas)
 
-def main():
-    root = tk.Tk()
-    root.configure(background="#36454F")
-    root.title("Sorting Algorithm Visualizer v0.0.1")
-    root.resizable(width=False, height=False)
-    sys.setrecursionlimit(1500)
-    app = Application(root)
-    root.mainloop()
+        self.master.mainloop()
+
 if __name__ == '__main__':
-    main()
+    Application()
