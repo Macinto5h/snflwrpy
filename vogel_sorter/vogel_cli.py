@@ -6,7 +6,7 @@ from vogel_sorter.main import Application
 
 class VogelCLI():
     def parseArguments(self):
-        parser = argparse.ArgumentParser(description="Visualize sorting algorithms with Vogel's model.")
+        parser = argparse.ArgumentParser(description=__description__)
         parser.add_argument('-a', '--algorithm', choices=self.getAvailableAlgorithms(), dest='algorithm')
         parser.add_argument('-v', '--version', action='version', version=self.getAppVersion())
 

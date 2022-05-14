@@ -1,33 +1,18 @@
-########################################
-#GUI for Sorting Algorithm Visualizer  #
-#Uses Vogel's Fibonacci Model          #
-#to represent a sorted visual sequence #
-#                                      #
-#Author: Macinto5h                     #
-########################################
 import tkinter as tk
 import math
-import random #needed for shuffle function
+import random
 from vogel_sorter.sorter_factory import SorterFactory
+from vogel_sorter.sort_type import SortType
+from vogel_sorter import __name__
+from vogel_sorter import __version__
 import sys
 import threading
 
 class Application:
-    #Constants for Application are defined here....
     total_items = 600
     oval_diameter = 10
     oval_distance = 12
-    algorithm_list = [
-        "Insertion Sort",
-        "Bubble Sort",
-        "Merge Sort",
-        "Selection Sort",
-        "Cocktail Sort",
-        "Gnome Sort",
-        "Shell Sort",
-        "Radix Sort LSD",
-        "Stooge Sort"
-    ]
+    algorithm_list = SortType.getValues()
     canvas_height = 700
 
     def build_array(self):
@@ -92,7 +77,7 @@ class Application:
     def start(self, algorithm):
         self.master = tk.Tk()
         self.master.configure(background="#36454F")
-        self.master.title("Sorting Algorithm Visualizer v0.0.1")
+        self.master.title(__name__ + " v" + __version__)
         self.master.resizable(width=False, height=False)
         sys.setrecursionlimit(1500)
 
@@ -114,6 +99,3 @@ class Application:
         self.menubar.add_command(label="Sort", command=self.sort_canvas)
 
         self.master.mainloop()
-
-if __name__ == '__main__':
-    Application()
