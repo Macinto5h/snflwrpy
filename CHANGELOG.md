@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changelog file
 - .editorconfig file
 - Poetry package and dependency manager
-- Unit testing
+- Unit testing with test coverage
 - Factory for selecting sorters
 - Command line interface
 ### Changed
