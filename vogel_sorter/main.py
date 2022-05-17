@@ -12,7 +12,7 @@ class Application:
     total_items = 600
     oval_diameter = 10
     oval_distance = 12
-    algorithm_list = SortType.getValues()
+    algorithm_list = SortType.get_values()
     canvas_height = 700
 
     def build_array(self):

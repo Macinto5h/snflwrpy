@@ -12,23 +12,23 @@ from vogel_sorter.sort_type import SortType
 
 class SorterFactory():
     def get_sorter(self, sorter_name):
-        if (sorter_name == SortType.BUBBLE.value):
+        if sorter_name == SortType.BUBBLE.value:
             return BubbleSorter()
-        elif (sorter_name == SortType.COCKTAIL.value):
+        if sorter_name == SortType.COCKTAIL.value:
             return CocktailSorter()
-        elif (sorter_name == SortType.GNOME.value):
+        if sorter_name == SortType.GNOME.value:
             return GnomeSorter()
-        elif (sorter_name == SortType.INSERTION.value):
+        if sorter_name == SortType.INSERTION.value:
             return InsertionSorter()
-        elif (sorter_name == SortType.MERGE.value):
+        if sorter_name == SortType.MERGE.value:
             return MergeSorter()
-        elif (sorter_name == SortType.RADIX_LSD.value):
+        if sorter_name == SortType.RADIX_LSD.value:
             return RadixLSDSorter()
-        elif (sorter_name == SortType.SELECTION.value):
+        if sorter_name == SortType.SELECTION.value:
             return SelectionSorter()
-        elif (sorter_name == SortType.SHELL.value):
+        if sorter_name == SortType.SHELL.value:
             return ShellSorter()
-        elif (sorter_name == SortType.STOOGE.value):
+        if sorter_name == SortType.STOOGE.value:
             return StoogeSorter()
 
         return Sorter()

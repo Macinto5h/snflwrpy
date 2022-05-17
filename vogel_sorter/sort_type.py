@@ -12,5 +12,5 @@ class SortType(Enum):
     STOOGE = 'stooge'
 
     @classmethod
-    def getValues(self):
+    def get_values(self):
         return list(map(lambda sortType: sortType.value, self))

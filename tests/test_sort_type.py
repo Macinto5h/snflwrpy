@@ -13,4 +13,4 @@ def test_sort_type_returns_list_of_all_values_when_called():
         SortType.STOOGE.value
     ]
 
-    assert SortType.getValues() == expected_list
+    assert SortType.get_values() == expected_list
