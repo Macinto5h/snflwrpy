@@ -1,28 +1,23 @@
+"""
+This module has the command line interface for vogel sorter that allows a user to
+run the app with various options.
+"""
 import argparse
 from vogel_sorter import __version__
 from vogel_sorter import __description__
 from vogel_sorter.sort_type import SortType
 from vogel_sorter.main import Application
 
-class VogelCLI():
-    def parse_arguments(self):
-        parser = argparse.ArgumentParser(description=__description__)
-        parser.add_argument('-a', '--algorithm', choices=self.get_available_algorithms(), dest='algorithm')
-        parser.add_argument('-v', '--version', action='version', version=self.get_app_version())
+def cli():
+    """Command line interface to run the vogel_sorter application."""
 
-        args = parser.parse_args()
+    parser = argparse.ArgumentParser(description=__description__)
+    parser.add_argument('-a', '--algorithm', choices=SortType.get_values(), dest='algorithm')
+    parser.add_argument('-v', '--version', action='version', version=__version__)
 
-        self.start_app_with_args(args)
+    args = parser.parse_args()
 
-    def get_app_version(self):
-        return __version__
-
-    def get_available_algorithms(self):
-        return SortType.get_values()
-
-    def start_app_with_args(self, args):
-        app = Application()
-        app.start(args.algorithm)
+    Application().start(args.algorithm)
 
 if __name__ == "__main__":
-    VogelCLI().parse_arguments()
+    cli()

@@ -1,7 +1,7 @@
 import tkinter as tk
 import math
 import random
-from vogel_sorter.sorter_factory import SorterFactory
+from vogel_sorter.sorter_factory import sorter_factory
 from vogel_sorter.sort_type import SortType
 from vogel_sorter import __name__
 from vogel_sorter import __version__
@@ -57,7 +57,7 @@ class Application:
 
         app = self
 
-        sort = SorterFactory().get_sorter(self.selected_algorithm.get())
+        sort = sorter_factory(self.selected_algorithm.get())
 
         threading.Thread(target=sort.sort(app, app.array)).start()
 
