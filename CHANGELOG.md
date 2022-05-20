@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.0] - 2022-05-20
+### Added
 - .gitignore file
 - Changelog file
 - .editorconfig file
@@ -16,10 +24,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Linter
 ### Changed
 - Project organization
-### Deprecated
-### Removed
-### Fixed
-### Security
 
 ## [0.0.3] - 2021-09-22
 ### Added

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vogel-sorter"
-version = "0.0.3"
+version = "0.1.0"
 description = "Visually demonstrates the function of sorting algorithms using Vogel's Model."
 authors = ["Macallan Camara <44030647+Macinto5h@users.noreply.github.com>"]
 license = "MIT"
