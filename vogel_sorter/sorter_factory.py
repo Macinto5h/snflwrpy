@@ -1,3 +1,7 @@
+"""
+Module provides sorter_factory function used to return a Sorter object
+based on the string name provided.
+"""
 from vogel_sorter.sorters.sorter import Sorter
 from vogel_sorter.sorters.bubble_sorter import BubbleSorter
 from vogel_sorter.sorters.cocktail_sorter import CocktailSorter
@@ -10,25 +14,28 @@ from vogel_sorter.sorters.shell_sorter import ShellSorter
 from vogel_sorter.sorters.stooge_sorter import StoogeSorter
 from vogel_sorter.sort_type import SortType
 
-class SorterFactory():
-    def get_sorter(self, sorter_name):
-        if (sorter_name == SortType.BUBBLE.value):
-            return BubbleSorter()
-        elif (sorter_name == SortType.COCKTAIL.value):
-            return CocktailSorter()
-        elif (sorter_name == SortType.GNOME.value):
-            return GnomeSorter()
-        elif (sorter_name == SortType.INSERTION.value):
-            return InsertionSorter()
-        elif (sorter_name == SortType.MERGE.value):
-            return MergeSorter()
-        elif (sorter_name == SortType.RADIX_LSD.value):
-            return RadixLSDSorter()
-        elif (sorter_name == SortType.SELECTION.value):
-            return SelectionSorter()
-        elif (sorter_name == SortType.SHELL.value):
-            return ShellSorter()
-        elif (sorter_name == SortType.STOOGE.value):
-            return StoogeSorter()
+def sorter_factory(sorter_name):
+    """Returns a sorter based on the name provided."""
 
-        return Sorter()
+    sorter = Sorter()
+
+    if sorter_name == SortType.BUBBLE.value:
+        sorter = BubbleSorter()
+    elif sorter_name == SortType.COCKTAIL.value:
+        sorter = CocktailSorter()
+    elif sorter_name == SortType.GNOME.value:
+        sorter = GnomeSorter()
+    elif sorter_name == SortType.INSERTION.value:
+        sorter = InsertionSorter()
+    elif sorter_name == SortType.MERGE.value:
+        sorter = MergeSorter()
+    elif sorter_name == SortType.RADIX_LSD.value:
+        sorter = RadixLSDSorter()
+    elif sorter_name == SortType.SELECTION.value:
+        sorter = SelectionSorter()
+    elif sorter_name == SortType.SHELL.value:
+        sorter = ShellSorter()
+    elif sorter_name == SortType.STOOGE.value:
+        sorter = StoogeSorter()
+
+    return sorter

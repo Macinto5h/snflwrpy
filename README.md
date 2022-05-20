@@ -21,3 +21,9 @@ To perform tests with coverage stats run
 ```bash
 poetry run pytest --cov=vogel_sorter
 ```
+
+### Linting
+To lint the source code along with the test suites run
+```bash
+poetry run pylint ./vogel_sorter ./tests
+```

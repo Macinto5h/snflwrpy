@@ -1,5 +1,4 @@
 from vogel_sorter.sorters.sorter import Sorter
-import math
 
 class SelectionSorter(Sorter):
     def sort(self, Application, list):
@@ -8,8 +7,8 @@ class SelectionSorter(Sorter):
             m = list[i] #smallest value variable
             j = i + 1
             swap_index = i
-            while (j < length):
-                if (list[j] < m):
+            while j < length:
+                if list[j] < m:
                     m = list[j]
                     swap_index = j
                 j += 1

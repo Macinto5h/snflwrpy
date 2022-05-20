@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Unit testing with test coverage
 - Factory for selecting sorters
 - Command line interface
+- Linter
 ### Changed
 - Project organization
 ### Deprecated
