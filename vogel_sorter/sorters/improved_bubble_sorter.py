@@ -2,19 +2,14 @@ from vogel_sorter.sorters.improved_sorter import ImprovedSorter
 
 class ImprovedBubbleSorter(ImprovedSorter):
 
-    def __init__(self, unsorted_array=[]):
+    def __init__(self, unsorted_array):
         super().__init__(unsorted_array)
         self._sort_index = 1
         self._swapped = False
 
-    def next(self):
-        self._reset_sort_changes()
-
-        if self._sorted == False:
-            self._swap_elements_if_needed()
-            self._update_index_and_sorted_status()
-
-        return super().next()
+    def _find_next_changes(self):
+        self._swap_elements_if_needed()
+        self._update_index_and_sorted_status()
 
     def _swap_elements_if_needed(self):
         expected_smaller_element = self._unsorted_array[self._sort_index - 1]
