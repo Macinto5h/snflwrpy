@@ -3,7 +3,7 @@ Test suite for sorter_factory module.
 """
 from vogel_sorter.sorter_factory import sorter_factory, improved_sorter_factory
 from vogel_sorter.sorters.sorter import Sorter
-from vogel_sorter.sorters.improved_bubble_sorter import ImprovedBubbleSorter
+from vogel_sorter.sorters.bubble_sorter import BubbleSorter
 from vogel_sorter.sorters.cocktail_sorter import CocktailSorter
 from vogel_sorter.sorters.gnome_sorter import GnomeSorter
 from vogel_sorter.sorters.insertion_sorter import InsertionSorter
@@ -25,7 +25,7 @@ def test_sorter_factory_returns_bubble_sorter_when_requested():
 
     sorter_name = SortType.BUBBLE.value
     received_sorter = improved_sorter_factory(sorter_name, [])
-    assert isinstance(received_sorter, ImprovedBubbleSorter)
+    assert isinstance(received_sorter, BubbleSorter)
 
 def test_sorter_factory_returns_cocktail_sorter_when_requested():
     """Test sorter factory returns cocktail sorter when requested."""

@@ -5,7 +5,6 @@ based on the string name provided.
 from vogel_sorter.sorters.improved_sorter import ImprovedSorter
 from vogel_sorter.sorters.sorter import Sorter
 from vogel_sorter.sorters.bubble_sorter import BubbleSorter
-from vogel_sorter.sorters.improved_bubble_sorter import ImprovedBubbleSorter
 from vogel_sorter.sorters.cocktail_sorter import CocktailSorter
 from vogel_sorter.sorters.gnome_sorter import GnomeSorter
 from vogel_sorter.sorters.insertion_sorter import InsertionSorter
@@ -41,4 +40,4 @@ def sorter_factory(sorter_name):
     return sorter
 
 def improved_sorter_factory(sorter_name, unsorted_array):
-    return ImprovedBubbleSorter(unsorted_array)
+    return BubbleSorter(unsorted_array)
