@@ -13,6 +13,9 @@ class CocktailSorter(BubbleSorter):
             self._sorted = True
             return
 
+        self._update_index()
+
+    def _update_index(self):
         if self._has_reached_beginning_or_end_of_array():
             self._swapped = False
             self._stepper *= -1
