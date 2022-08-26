@@ -20,9 +20,7 @@ def sorter_factory(sorter_name):
 
     sorter = Sorter()
 
-    if sorter_name == SortType.COCKTAIL.value:
-        sorter = CocktailSorter()
-    elif sorter_name == SortType.GNOME.value:
+    if sorter_name == SortType.GNOME.value:
         sorter = GnomeSorter()
     elif sorter_name == SortType.INSERTION.value:
         sorter = InsertionSorter()
@@ -40,4 +38,10 @@ def sorter_factory(sorter_name):
     return sorter
 
 def improved_sorter_factory(sorter_name, unsorted_array):
-    return BubbleSorter(unsorted_array)
+
+    sorter = BubbleSorter(unsorted_array)
+
+    if sorter_name == SortType.COCKTAIL.value:
+        sorter = CocktailSorter(unsorted_array)
+
+    return sorter

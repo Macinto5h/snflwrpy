@@ -31,7 +31,7 @@ def test_sorter_factory_returns_cocktail_sorter_when_requested():
     """Test sorter factory returns cocktail sorter when requested."""
 
     sorter_name = SortType.COCKTAIL.value
-    received_sorter = sorter_factory(sorter_name)
+    received_sorter = improved_sorter_factory(sorter_name, [])
     assert isinstance(received_sorter, CocktailSorter)
 
 def test_sorter_factory_returns_gnome_sorter_when_requested():
