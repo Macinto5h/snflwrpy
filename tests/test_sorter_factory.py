@@ -45,7 +45,7 @@ def test_sorter_factory_returns_insertion_sorter_when_requested():
     """Test sorter factory returns insertion sorter when requested."""
 
     sorter_name = SortType.INSERTION.value
-    received_sorter = sorter_factory(sorter_name)
+    received_sorter = improved_sorter_factory(sorter_name, [])
     assert isinstance(received_sorter, InsertionSorter)
 
 def test_sorter_factory_returns_merge_sorter_when_requested():

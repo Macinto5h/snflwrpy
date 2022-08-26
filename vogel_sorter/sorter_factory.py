@@ -45,5 +45,7 @@ def improved_sorter_factory(sorter_name, unsorted_array):
         sorter = CocktailSorter(unsorted_array)
     elif sorter_name == SortType.GNOME.value:
         sorter = GnomeSorter(unsorted_array)
+    elif sorter_name == SortType.INSERTION.value:
+        sorter = InsertionSorter(unsorted_array)
 
     return sorter

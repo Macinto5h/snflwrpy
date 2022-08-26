@@ -6,3 +6,6 @@ class SortChange:
 
     def __eq__(self, other):
         return isinstance(other, self.__class__) and self.index == other.index and self.old_value == other.old_value and self.new_value == other.new_value
+
+    def __str__(self):
+        return "index: " + str(self.index) + " old_value: " + str(self.old_value) + " new_value: " + str(self.new_value)
