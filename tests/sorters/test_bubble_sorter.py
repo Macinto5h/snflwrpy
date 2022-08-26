@@ -1,5 +1,5 @@
 """
-Test suite for improved_bubble_sorter module.
+Test suite for the bubble_sorter module.
 """
 from vogel_sorter.sorters.bubble_sorter import BubbleSorter
 from vogel_sorter.sorters.sort_change import SortChange
@@ -31,7 +31,7 @@ def test_bubble_sorter_is_sorted_after_iterating_next_n_squared_times():
     for i in range(list_length ** 2):
         sorter.next()
 
-    assert sorter.issorted()
+    assert sorter.is_sorted()
 
 def test_bubble_sorter_is_sorted_after_iterating_best_case_scenario():
     """Test bubble sorter is sorted after iterating best case scenario"""
@@ -43,19 +43,4 @@ def test_bubble_sorter_is_sorted_after_iterating_best_case_scenario():
     for i in range(list_length):
         sorter.next()
 
-    assert sorter.issorted()
-
-def test_bubble_sorter_should_reset_sort_changes_for_every_next_call():
-    """Test bubble sorter should reset sort changes for every next call"""
-
-    unsorted_array = [4, 3, 2, 1]
-    sorter = BubbleSorter(unsorted_array)
-    first_expected_sort_change = SortChange(index=1, old_value=4, new_value=2)
-    second_expected_sort_change = SortChange(index=2, old_value=2, new_value=4)
-
-    sorter.next()
-    next_results = sorter.next()
-
-    assert len(next_results) == 2
-    assert next_results[0] == first_expected_sort_change
-    assert next_results[1] == second_expected_sort_change
+    assert sorter.is_sorted()

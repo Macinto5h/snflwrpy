@@ -62,7 +62,7 @@ class Application:
         # threading.Thread(target=sort.sort(app, app.array)).start()
         sorter = improved_sorter_factory(self.selected_algorithm.get(), self.array)
 
-        while sorter.issorted() == False:
+        while sorter.is_sorted() == False:
             changes = sorter.next()
             for change in changes:
                 self.update_canvas(change.old_value, change.new_value, change.index)

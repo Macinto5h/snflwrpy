@@ -10,36 +10,21 @@ class ImprovedSorter(ABC):
         self._unsorted_array = unsorted_array
         self._sorted = False
 
-        self._reset_sort_changes()
-
-    def issorted(self):
+    def is_sorted(self):
         """Returns if the array provided to the sorter is sorted"""
 
         return self._sorted
 
+    @abstractmethod
     def next(self):
         """Returns the next changes that are made to the array when sorted."""
 
-        self._reset_sort_changes()
-
-        if self._sorted == False:
-            self._find_next_changes()
-
-        return self._sort_changes
-
-    @abstractmethod
-    def _find_next_changes(self):
-        """Finds the next changes the sorting algorithm will apply, and adds them to the sort changes variable if any."""
-
         pass
 
-    def _record_and_apply_change(self, index, value):
-        """Appends sort change to sort changes list and applies the change to the unsorted array."""
+    def _apply_change(self, index, new_value):
+        """Applies the change to the unsorted array and returns a SortChange object."""
 
-        self._sort_changes.append(SortChange(index=index, old_value=self._unsorted_array[index], new_value=value))
-        self._unsorted_array[index] = value
+        old_value = self._unsorted_array[index]
+        self._unsorted_array[index] = new_value
 
-    def _reset_sort_changes(self):
-        """Resets the internal array for collecting sort changes to be empty"""
-
-        self._sort_changes = []
+        return SortChange(index, old_value, new_value)
