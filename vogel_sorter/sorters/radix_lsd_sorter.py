@@ -1,28 +1,53 @@
-from vogel_sorter.sorters.sorter import Sorter
-import math
+from vogel_sorter.sorters.improved_sorter import ImprovedSorter
 
-class RadixLSDSorter(Sorter):
-    def sort(self,Application,list):
-        maxValue = max(list)
-        i = 0
-        #10 is the base value since values of the list are in decimal
-        while 10 ** i <= maxValue:
-            list = self.buckets_to_list(self.list_to_buckets(list,i),Application,list)
-            i += 1
+class RadixLSDSorter(ImprovedSorter):
 
-    def list_to_buckets(self,array,iteration):
-        buckets = [[] for x in range(10)]
-        for i in array:
-            digit = (i // (10 ** iteration)) % 10
-            buckets[digit].append(i)
-        return buckets
+    def __init__(self, unsorted_array):
+        super().__init__(unsorted_array)
+        self._max_value = max(unsorted_array)
+        self._digit_power = 0
 
-    def buckets_to_list(self,buckets,Application,list):
-        numbers = []
-        index = 0
-        for bucket in buckets:
-            for j in bucket:
-                numbers.append(j)
-                Application.update_canvas(list[index],j,index)
-                index += 1
-        return numbers
+        self._reset_buckets_and_indices()
+
+    def next(self):
+        changes = []
+        bucket = self._buckets[self._bucket_list_index]
+
+        while len(bucket) == 0:
+            self._bucket_list_index += 1
+            bucket = self._buckets[self._bucket_list_index]
+
+        changes.append(self._apply_change(self._array_index, bucket[self._bucket_index]))
+
+        self._update_indices_and_buckets()
+
+        return changes
+
+    def _update_indices_and_buckets(self):
+        reached_end_of_array = self._array_index == len(self._unsorted_array) - 1
+        reached_most_significant_digit = (self._max_value // (10 ** self._digit_power)) < 10
+        reached_end_of_bucket = self._bucket_index >= len(self._buckets[self._bucket_list_index]) - 1
+
+        if reached_end_of_array and reached_most_significant_digit:
+            self._sorted = True
+        elif reached_end_of_array:
+            self._digit_power += 1
+            self._reset_buckets_and_indices()
+        elif reached_end_of_bucket:
+            self._bucket_list_index += 1
+            self._bucket_index = 0
+            self._array_index += 1
+        else:
+            self._bucket_index += 1
+            self._array_index += 1
+
+
+    def _reset_buckets_and_indices(self):
+        self._bucket_list_index = 0
+        self._bucket_index = 0
+        self._array_index = 0
+        self._buckets = [[] for x in range(10)]
+
+        for i in self._unsorted_array:
+            digit = (i // (10 ** self._digit_power)) % 10
+            self._buckets[digit].append(i)

@@ -59,7 +59,7 @@ def test_sorter_factory_returns_radix_lsd_sorter_when_requested():
     """Test sorter factory returns radix lsd sorter when requested."""
 
     sorter_name = SortType.RADIX_LSD.value
-    received_sorter = sorter_factory(sorter_name)
+    received_sorter = improved_sorter_factory(sorter_name, [1])
     assert isinstance(received_sorter, RadixLSDSorter)
 
 def test_sorter_factory_returns_selection_sorter_when_requested():

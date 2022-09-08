@@ -47,5 +47,7 @@ def improved_sorter_factory(sorter_name, unsorted_array):
         sorter = GnomeSorter(unsorted_array)
     elif sorter_name == SortType.INSERTION.value:
         sorter = InsertionSorter(unsorted_array)
+    elif sorter_name == SortType.RADIX_LSD.value:
+        sorter = RadixLSDSorter(unsorted_array)
 
     return sorter
