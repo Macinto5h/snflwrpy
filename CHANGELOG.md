@@ -7,15 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 ### Changed
-- Architecture so that sorting algorithms can be executed step by step.
 ### Deprecated
 ### Removed
-- Merge sort
-- Selection sort
-- Shell sort
-- Stooge sort
 ### Fixed
 ### Security
+
+## [0.2.0] - 2022-09-11
+### Changed
+- Architecture so that sorting algorithms can be executed step by step.
+### Removed
+- Merge sort, Selection sort, Shell sort, and Stooge sort until reimplemented with new design.
 
 ## [0.1.0] - 2022-05-20
 ### Added
