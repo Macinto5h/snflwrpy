@@ -1,6 +1,9 @@
+"""Module for GnomeSorter class"""
 from vogel_sorter.sorters.abstract_sorter import AbstractSorter
 
 class GnomeSorter(AbstractSorter):
+    """Sorter implementation of the gnome sort algorithm"""
+
     def __init__(self, unsorted_array):
         super().__init__(unsorted_array)
         self._sort_index = 1

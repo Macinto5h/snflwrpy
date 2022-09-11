@@ -2,7 +2,6 @@
 Module provides sorter_factory function used to return a Sorter object
 based on the string name provided.
 """
-from vogel_sorter.sorters.abstract_sorter import AbstractSorter
 from vogel_sorter.sorters.bubble_sorter import BubbleSorter
 from vogel_sorter.sorters.cocktail_sorter import CocktailSorter
 from vogel_sorter.sorters.gnome_sorter import GnomeSorter

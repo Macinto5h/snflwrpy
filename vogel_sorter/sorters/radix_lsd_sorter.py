@@ -1,6 +1,8 @@
+"""Module for the RadixLSDSorter class"""
 from vogel_sorter.sorters.abstract_sorter import AbstractSorter
 
 class RadixLSDSorter(AbstractSorter):
+    """Sorter implementation of the radix lsd sort algorithm"""
 
     def __init__(self, unsorted_array):
         super().__init__(unsorted_array)
