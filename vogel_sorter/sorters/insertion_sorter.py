@@ -1,18 +1,39 @@
-from vogel_sorter.sorters.sorter import Sorter
-import math
+"""Module for the InsertionSorter class"""
+from vogel_sorter.sorters.abstract_sorter import AbstractSorter
 
-class InsertionSorter(Sorter):
-    def sort(self, Application, list):
-        length = len(list)
-        for index in range(1, length):
-            k = list[index]
-            i = index-1
-            while(i >= 0 and list[i]>k):
-                old_value = list[i+1]
-                new_value = list[i]
-                list[i+1]=list[i]
-                Application.update_canvas(old_value,new_value,i+1)
-                i = i - 1
-            old_value = list[i+1]
-            list[i+1] = k
-            Application.update_canvas(old_value,k,i+1)
+class InsertionSorter(AbstractSorter):
+    """Sorter implementation of the insertion sort algorithm"""
+
+    def __init__(self, unsorted_array):
+        super().__init__(unsorted_array)
+
+        if len(unsorted_array) > 1:
+            self._outer_sort_index = 1
+            self._set_outer_sort_value_and_inner_sort_index()
+
+    def next(self):
+        changes = []
+
+        if (self._inner_sort_index >= 0
+            and self._unsorted_array[self._inner_sort_index] > self._outer_sort_value):
+            new_value = self._unsorted_array[self._inner_sort_index]
+            changes.append(self._apply_change(self._inner_sort_index + 1, new_value))
+            self._inner_sort_index -= 1
+        else:
+            changes.append(self._apply_change(self._inner_sort_index + 1, self._outer_sort_value))
+            self._update_sort_status_and_indices()
+
+        return changes
+
+    def _update_sort_status_and_indices(self):
+        self._outer_sort_index += 1
+
+        if self._outer_sort_index >= len(self._unsorted_array):
+            self._sorted = True
+            return
+
+        self._set_outer_sort_value_and_inner_sort_index()
+
+    def _set_outer_sort_value_and_inner_sort_index(self):
+        self._outer_sort_value = self._unsorted_array[self._outer_sort_index]
+        self._inner_sort_index = self._outer_sort_index - 1

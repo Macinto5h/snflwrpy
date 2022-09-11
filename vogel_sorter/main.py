@@ -57,9 +57,12 @@ class Application:
 
         app = self
 
-        sort = sorter_factory(self.selected_algorithm.get())
+        sorter = sorter_factory(self.selected_algorithm.get(), self.array)
 
-        threading.Thread(target=sort.sort(app, app.array)).start()
+        while sorter.is_sorted() == False:
+            changes = sorter.next()
+            for change in changes:
+                self.update_canvas(change.old_value, change.new_value, change.index)
 
     def update_canvas(self, old_value, new_value, index):
         center_x = self.canvas_height/2

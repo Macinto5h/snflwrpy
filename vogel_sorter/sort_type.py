@@ -11,11 +11,7 @@ class SortType(Enum):
     COCKTAIL = 'cocktail'
     GNOME = 'gnome'
     INSERTION = 'insertion'
-    MERGE = 'merge'
     RADIX_LSD = 'radixlsd'
-    SELECTION = 'selection'
-    SHELL = 'shell'
-    STOOGE = 'stooge'
 
     @classmethod
     def get_values(cls):
