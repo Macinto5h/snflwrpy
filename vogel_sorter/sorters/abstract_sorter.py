@@ -1,8 +1,8 @@
 from vogel_sorter.sorters.sort_change import SortChange
 from abc import ABC,abstractmethod
 
-class ImprovedSorter(ABC):
-    """Sorter interface that applies improved sorter infrastructure"""
+class AbstractSorter(ABC):
+    """Sorter interface that applies abstract sorter infrastructure"""
 
     def __init__(self, unsorted_array):
         """Sets up the sorter with the provided unsorted array and sets other internal values."""

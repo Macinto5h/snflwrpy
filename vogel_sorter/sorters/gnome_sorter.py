@@ -1,6 +1,6 @@
-from vogel_sorter.sorters.improved_sorter import ImprovedSorter
+from vogel_sorter.sorters.abstract_sorter import AbstractSorter
 
-class GnomeSorter(ImprovedSorter):
+class GnomeSorter(AbstractSorter):
     def __init__(self, unsorted_array):
         super().__init__(unsorted_array)
         self._sort_index = 1

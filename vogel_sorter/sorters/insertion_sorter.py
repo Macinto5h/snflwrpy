@@ -1,7 +1,7 @@
 """Module for the InsertionSorter class"""
-from vogel_sorter.sorters.improved_sorter import ImprovedSorter
+from vogel_sorter.sorters.abstract_sorter import AbstractSorter
 
-class InsertionSorter(ImprovedSorter):
+class InsertionSorter(AbstractSorter):
     """Sorter implementation of the insertion sort algorithm"""
 
     def __init__(self, unsorted_array):

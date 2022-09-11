@@ -1,7 +1,7 @@
 """Module for the BubbleSorter class"""
-from vogel_sorter.sorters.improved_sorter import ImprovedSorter
+from vogel_sorter.sorters.abstract_sorter import AbstractSorter
 
-class BubbleSorter(ImprovedSorter):
+class BubbleSorter(AbstractSorter):
     """Sorter implementation of the bubble sort algorithm"""
 
     def __init__(self, unsorted_array):

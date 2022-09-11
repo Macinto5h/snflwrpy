@@ -7,8 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 ### Changed
+- Architecture so that sorting algorithms can be executed step by step.
 ### Deprecated
 ### Removed
+- Merge sort
+- Selection sort
+- Shell sort
+- Stooge sort
 ### Fixed
 ### Security
 
