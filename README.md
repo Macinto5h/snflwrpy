@@ -21,9 +21,9 @@ code in Copilot.
 ### Starting application
 To start the application run
 ```bash
-poetry run python ./vogel_sorter/vogel_cli.py
+poetry run start [options]
 ```
-with the arguments desired. To see available options add the argument `--help`.
+To see available options add the argument `--help`.
 
 ### Testing
 To perform tests run
