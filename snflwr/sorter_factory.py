@@ -2,12 +2,12 @@
 Module provides sorter_factory function used to return a Sorter object
 based on the string name provided.
 """
-from vogel_sorter.sorters.bubble_sorter import BubbleSorter
-from vogel_sorter.sorters.cocktail_sorter import CocktailSorter
-from vogel_sorter.sorters.gnome_sorter import GnomeSorter
-from vogel_sorter.sorters.insertion_sorter import InsertionSorter
-from vogel_sorter.sorters.radix_lsd_sorter import RadixLSDSorter
-from vogel_sorter.sort_type import SortType
+from snflwr.sorters.bubble_sorter import BubbleSorter
+from snflwr.sorters.cocktail_sorter import CocktailSorter
+from snflwr.sorters.gnome_sorter import GnomeSorter
+from snflwr.sorters.insertion_sorter import InsertionSorter
+from snflwr.sorters.radix_lsd_sorter import RadixLSDSorter
+from snflwr.sort_type import SortType
 
 def sorter_factory(sorter_name, unsorted_array):
     """Returns a sorter based on the name provided."""

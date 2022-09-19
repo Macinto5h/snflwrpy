@@ -1,5 +1,5 @@
 """Module for the BubbleSorter class"""
-from vogel_sorter.sorters.abstract_sorter import AbstractSorter
+from snflwr.sorters.abstract_sorter import AbstractSorter
 
 class BubbleSorter(AbstractSorter):
     """Sorter implementation of the bubble sort algorithm"""

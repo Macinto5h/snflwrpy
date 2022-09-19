@@ -1,13 +1,13 @@
 """
 Test suite for sorter_factory module.
 """
-from vogel_sorter.sorter_factory import sorter_factory
-from vogel_sorter.sorters.bubble_sorter import BubbleSorter
-from vogel_sorter.sorters.cocktail_sorter import CocktailSorter
-from vogel_sorter.sorters.gnome_sorter import GnomeSorter
-from vogel_sorter.sorters.insertion_sorter import InsertionSorter
-from vogel_sorter.sorters.radix_lsd_sorter import RadixLSDSorter
-from vogel_sorter.sort_type import SortType
+from snflwr.sorter_factory import sorter_factory
+from snflwr.sorters.bubble_sorter import BubbleSorter
+from snflwr.sorters.cocktail_sorter import CocktailSorter
+from snflwr.sorters.gnome_sorter import GnomeSorter
+from snflwr.sorters.insertion_sorter import InsertionSorter
+from snflwr.sorters.radix_lsd_sorter import RadixLSDSorter
+from snflwr.sort_type import SortType
 
 def test_sorter_factory_returns_bubble_sorter_when_requested():
     """Test sorter factory returns bubble sorter when requested."""

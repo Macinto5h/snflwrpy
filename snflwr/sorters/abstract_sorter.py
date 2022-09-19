@@ -1,4 +1,4 @@
-from vogel_sorter.sorters.sort_change import SortChange
+from snflwr.sorters.sort_change import SortChange
 from abc import ABC,abstractmethod
 
 class AbstractSorter(ABC):

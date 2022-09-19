@@ -1,6 +1,6 @@
 """Test suite for gnome_sorter module"""
-from vogel_sorter.sorters.gnome_sorter import GnomeSorter
-from vogel_sorter.sorters.sort_change import SortChange
+from snflwr.sorters.gnome_sorter import GnomeSorter
+from snflwr.sorters.sort_change import SortChange
 from chancepy import Chance
 
 def test_gnome_sorter_next_returns_expected_sort_change():

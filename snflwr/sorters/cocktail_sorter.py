@@ -1,5 +1,5 @@
 """Module for CocktailSorter class"""
-from vogel_sorter.sorters.bubble_sorter import BubbleSorter
+from snflwr.sorters.bubble_sorter import BubbleSorter
 
 class CocktailSorter(BubbleSorter):
     """Sorter implementation of the cocktail shaker sort algorithm"""

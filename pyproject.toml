@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "vogel-sorter"
-version = "0.2.0"
-description = "Visually demonstrates the function of sorting algorithms using Vogel's Model."
+name = "snflwr"
+version = "1.0.0"
+description = "Visually demonstrates the function of sorting algorithms using Vogel's Fibonacci model."
 authors = ["Macallan Camara <44030647+Macinto5h@users.noreply.github.com>"]
 license = "MIT"
 readme = "README.md"
@@ -18,7 +18,7 @@ chancepy = "^0.1.3"
 [tool.poetry.dev-dependencies]
 
 [tool.poetry.scripts]
-start = "vogel_sorter.vogel_cli:cli"
+start = "snflwr.vogel_cli:cli"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

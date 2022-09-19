@@ -1,10 +1,10 @@
 import tkinter as tk
 import math
 import random
-from vogel_sorter.sorter_factory import sorter_factory
-from vogel_sorter.sort_type import SortType
-from vogel_sorter import __name__
-from vogel_sorter import __version__
+from snflwr.sorter_factory import sorter_factory
+from snflwr.sort_type import SortType
+from snflwr import __name__
+from snflwr import __version__
 import sys
 import threading
 

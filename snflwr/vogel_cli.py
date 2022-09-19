@@ -3,10 +3,10 @@ This module has the command line interface for vogel sorter that allows a user t
 run the app with various options.
 """
 import argparse
-from vogel_sorter import __version__
-from vogel_sorter import __description__
-from vogel_sorter.sort_type import SortType
-from vogel_sorter.main import Application
+from snflwr import __version__
+from snflwr import __description__
+from snflwr.sort_type import SortType
+from snflwr.main import Application
 
 def cli():
     """Command line interface to run the vogel_sorter application."""

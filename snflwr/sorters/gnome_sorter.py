@@ -1,5 +1,5 @@
 """Module for GnomeSorter class"""
-from vogel_sorter.sorters.abstract_sorter import AbstractSorter
+from snflwr.sorters.abstract_sorter import AbstractSorter
 
 class GnomeSorter(AbstractSorter):
     """Sorter implementation of the gnome sort algorithm"""

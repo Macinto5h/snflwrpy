@@ -1,5 +1,5 @@
 """Module for the InsertionSorter class"""
-from vogel_sorter.sorters.abstract_sorter import AbstractSorter
+from snflwr.sorters.abstract_sorter import AbstractSorter
 
 class InsertionSorter(AbstractSorter):
     """Sorter implementation of the insertion sort algorithm"""
