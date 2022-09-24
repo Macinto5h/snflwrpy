@@ -1,8 +1,8 @@
-"""Module for GnomeSorter class"""
-from snflwr.sorters.abstract_sorter import AbstractSorter
+"""Module for the BubbleSorter class"""
+from snflwrpy.sorters.abstract_sorter import AbstractSorter
 
-class GnomeSorter(AbstractSorter):
-    """Sorter implementation of the gnome sort algorithm"""
+class BubbleSorter(AbstractSorter):
+    """Sorter implementation of the bubble sort algorithm"""
 
     def __init__(self, unsorted_array):
         super().__init__(unsorted_array)
@@ -12,12 +12,10 @@ class GnomeSorter(AbstractSorter):
     def next(self):
         changes = self._swap_elements_if_needed()
         self._update_index_and_sorted_status()
+
         return changes
 
     def _swap_elements_if_needed(self):
-        if self._sort_index == 0:
-            return []
-
         changes = []
         expected_smaller_element = self._unsorted_array[self._sort_index - 1]
         expected_larger_element = self._unsorted_array[self._sort_index]
@@ -32,10 +30,8 @@ class GnomeSorter(AbstractSorter):
     def _update_index_and_sorted_status(self):
         if self._sort_index == len(self._unsorted_array) - 1 and self._swapped is False:
             self._sorted = True
-            return
-
-        if self._swapped:
-            self._sort_index -= 1
+        elif self._sort_index == len(self._unsorted_array) - 1:
+            self._sort_index = 1
             self._swapped = False
         else:
             self._sort_index += 1

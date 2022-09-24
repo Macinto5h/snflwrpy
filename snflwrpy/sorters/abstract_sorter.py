@@ -1,4 +1,4 @@
-from snflwr.sorters.sort_change import SortChange
+from snflwrpy.sorters.sort_change import SortChange
 from abc import ABC,abstractmethod
 
 class AbstractSorter(ABC):

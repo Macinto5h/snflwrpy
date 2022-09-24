@@ -1,8 +1,8 @@
 """
 Test suite for the bubble_sorter module.
 """
-from snflwr.sorters.cocktail_sorter import CocktailSorter
-from snflwr.sorters.sort_change import SortChange
+from snflwrpy.sorters.cocktail_sorter import CocktailSorter
+from snflwrpy.sorters.sort_change import SortChange
 from chancepy import Chance
 
 def test_cocktail_sorter_next_returns_expected_sort_change():

@@ -1,6 +1,6 @@
 """Test suite for radix_lsd_sorter module"""
-from snflwr.sorters.radix_lsd_sorter import RadixLSDSorter
-from snflwr.sorters.sort_change import SortChange
+from snflwrpy.sorters.radix_lsd_sorter import RadixLSDSorter
+from snflwrpy.sorters.sort_change import SortChange
 from chancepy import Chance
 
 def test_radix_lsd_sorter_is_sorted_after_iterating_list_length_times_digit_length():

@@ -1,6 +1,6 @@
 from curses import wrapper
-from snflwr.sorter_factory import sorter_factory
-from snflwr import __name__, __version__
+from snflwrpy.sorter_factory import sorter_factory
+from snflwrpy import __name__, __version__
 import curses
 import math
 import random

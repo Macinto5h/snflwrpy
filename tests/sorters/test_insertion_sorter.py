@@ -1,6 +1,6 @@
 """Test suite for insertion_sorter module"""
-from snflwr.sorters.insertion_sorter import InsertionSorter
-from snflwr.sorters.sort_change import SortChange
+from snflwrpy.sorters.insertion_sorter import InsertionSorter
+from snflwrpy.sorters.sort_change import SortChange
 from chancepy import Chance
 
 def test_insertion_sorter_next_returns_expected_sort_change():

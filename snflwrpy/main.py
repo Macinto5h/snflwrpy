@@ -1,10 +1,10 @@
 import tkinter as tk
 import math
 import random
-from snflwr.sorter_factory import sorter_factory
-from snflwr.sort_type import SortType
-from snflwr import __name__
-from snflwr import __version__
+from snflwrpy.sorter_factory import sorter_factory
+from snflwrpy.sort_type import SortType
+from snflwrpy import __name__
+from snflwrpy import __version__
 import sys
 import threading
 

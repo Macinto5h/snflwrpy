@@ -1,4 +1,4 @@
-# vogel-sorter
+# snflwrpy
 
 Visually demonstrates the function of sorting algorithms using Vogel's Model.
 

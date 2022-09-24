@@ -1,5 +1,5 @@
 """Module for the RadixLSDSorter class"""
-from snflwr.sorters.abstract_sorter import AbstractSorter
+from snflwrpy.sorters.abstract_sorter import AbstractSorter
 
 class RadixLSDSorter(AbstractSorter):
     """Sorter implementation of the radix lsd sort algorithm"""
