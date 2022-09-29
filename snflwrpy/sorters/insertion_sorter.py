@@ -12,18 +12,15 @@ class InsertionSorter(AbstractSorter):
             self._set_outer_sort_value_and_inner_sort_index()
 
     def next(self):
-        changes = []
-
         if (self._inner_sort_index >= 0
             and self._unsorted_array[self._inner_sort_index] > self._outer_sort_value):
             new_value = self._unsorted_array[self._inner_sort_index]
-            changes.append(self._apply_change(self._inner_sort_index + 1, new_value))
+            self._unsorted_array[self._inner_sort_index + 1] = new_value
             self._inner_sort_index -= 1
-        else:
-            changes.append(self._apply_change(self._inner_sort_index + 1, self._outer_sort_value))
-            self._update_sort_status_and_indices()
+            return
 
-        return changes
+        self._unsorted_array[self._inner_sort_index + 1] = self._outer_sort_value
+        self._update_sort_status_and_indices()
 
     def _update_sort_status_and_indices(self):
         self._outer_sort_index += 1

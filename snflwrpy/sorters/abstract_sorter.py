@@ -23,8 +23,3 @@ class AbstractSorter(ABC):
     @abstractmethod
     def next(self):
         """Returns the next changes that are made to the array when sorted."""
-
-    def _apply_change(self, index, new_value):
-        """Applies the change to the unsorted array."""
-
-        self._unsorted_array[index] = new_value
