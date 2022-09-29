@@ -6,7 +6,7 @@ import argparse
 from snflwrpy import __version__
 from snflwrpy import __description__
 from snflwrpy.sort_type import SortType
-from snflwrpy.vogel_curses import start_visualizer
+from snflwrpy.visualizer import start_visualizer
 
 def cli():
     """Command line interface to run the snflwrpy application."""
