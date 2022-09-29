@@ -3,9 +3,10 @@ This module has the command line interface for snflwrpy that allows a user to
 run the app with various options.
 """
 import argparse
+from curses import wrapper
 from snflwrpy import __app_version__, __app_description__
 from snflwrpy.sort_type import SortType
-from snflwrpy.visualizer import start_visualizer
+from snflwrpy.visualizer import visualizer_start
 
 def cli():
     """Command line interface to run the snflwrpy application."""
@@ -16,7 +17,7 @@ def cli():
 
     args = parser.parse_args()
 
-    start_visualizer(args.algorithm)
+    wrapper(visualizer_start, args)
 
 if __name__ == "__main__":
     cli()
