@@ -1,5 +1,5 @@
 """Module for AbstractSorter class"""
-from abc import ABC,abstractmethod
+from abc import ABC, abstractmethod
 
 class AbstractSorter(ABC):
     """Sorter interface that applies abstract sorter infrastructure"""
@@ -22,5 +22,4 @@ class AbstractSorter(ABC):
     def _apply_change(self, index, new_value):
         """Applies the change to the unsorted array."""
 
-        old_value = self._unsorted_array[index]
         self._unsorted_array[index] = new_value
