@@ -1,5 +1,5 @@
-from vogel_sorter.sorters.sort_change import SortChange
-from abc import ABC,abstractmethod
+"""Module for AbstractSorter class"""
+from abc import ABC, abstractmethod
 
 class AbstractSorter(ABC):
     """Sorter interface that applies abstract sorter infrastructure"""
@@ -15,16 +15,11 @@ class AbstractSorter(ABC):
 
         return self._sorted
 
+    def get_array(self):
+        """Returns the array being sorted by the sorter in its current state."""
+
+        return self._unsorted_array
+
     @abstractmethod
     def next(self):
         """Returns the next changes that are made to the array when sorted."""
-
-        pass
-
-    def _apply_change(self, index, new_value):
-        """Applies the change to the unsorted array and returns a SortChange object."""
-
-        old_value = self._unsorted_array[index]
-        self._unsorted_array[index] = new_value
-
-        return SortChange(index, old_value, new_value)

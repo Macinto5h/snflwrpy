@@ -1,22 +1,8 @@
 """
 Test suite for the bubble_sorter module.
 """
-from vogel_sorter.sorters.cocktail_sorter import CocktailSorter
-from vogel_sorter.sorters.sort_change import SortChange
+from snflwrpy.sorters.cocktail_sorter import CocktailSorter
 from chancepy import Chance
-
-def test_cocktail_sorter_next_returns_expected_sort_change():
-    """Test cocktail sorter next returns expected sort changes"""
-
-    unsorted_array = [Chance.integer(21, 40), Chance.integer(1,20)]
-    sorter = CocktailSorter(unsorted_array)
-    first_expected_sort_change = SortChange(index=0, old_value=unsorted_array[0], new_value=unsorted_array[1])
-    second_expected_sort_change = SortChange(index=1, old_value=unsorted_array[1], new_value=unsorted_array[0])
-
-    next_results = sorter.next()
-
-    assert next_results[0] == first_expected_sort_change
-    assert next_results[1] == second_expected_sort_change
 
 def test_cocktail_sorter_changes_step_direction_when_iterating():
     """Test cocktail sorter changes step direction when iterating"""

@@ -1,5 +1,5 @@
 """Module for the RadixLSDSorter class"""
-from vogel_sorter.sorters.abstract_sorter import AbstractSorter
+from snflwrpy.sorters.abstract_sorter import AbstractSorter
 
 class RadixLSDSorter(AbstractSorter):
     """Sorter implementation of the radix lsd sort algorithm"""
@@ -12,18 +12,15 @@ class RadixLSDSorter(AbstractSorter):
         self._reset_buckets_and_indices()
 
     def next(self):
-        changes = []
         bucket = self._buckets[self._bucket_list_index]
 
         while len(bucket) == 0:
             self._bucket_list_index += 1
             bucket = self._buckets[self._bucket_list_index]
 
-        changes.append(self._apply_change(self._array_index, bucket[self._bucket_index]))
+        self._unsorted_array[self._array_index] = bucket[self._bucket_index]
 
         self._update_indices_and_buckets()
-
-        return changes
 
     def _update_indices_and_buckets(self):
         reached_end_of_array = self._array_index == len(self._unsorted_array) - 1
