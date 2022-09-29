@@ -19,7 +19,7 @@ def visualizer_start(stdscr, args):
         sorter.next()
 
         stats_text = f"algorithm: {args.algorithm} | florets: {args.floret_count} | iterations: {iterations} | time: {round(time.time() - start_time, 2)} seconds"
-        draw(stdscr, stats_text, sorter._unsorted_array)
+        draw(stdscr, stats_text, sorter.get_array())
 
     stdscr.getkey()
 

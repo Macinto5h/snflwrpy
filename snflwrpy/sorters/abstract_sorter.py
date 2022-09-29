@@ -15,6 +15,11 @@ class AbstractSorter(ABC):
 
         return self._sorted
 
+    def get_array(self):
+        """Returns the array being sorted by the sorter in its current state."""
+
+        return self._unsorted_array
+
     @abstractmethod
     def next(self):
         """Returns the next changes that are made to the array when sorted."""
