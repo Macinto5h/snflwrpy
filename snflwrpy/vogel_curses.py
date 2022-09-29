@@ -1,18 +1,16 @@
 from curses import wrapper
 from snflwrpy.sorter_factory import sorter_factory
 from snflwrpy import __name__, __version__
-import curses
 import math
 import random
 import time
 
-def degrees_to_radians(angle):
-    return angle * (math.pi / 180)
+def start_visualizer(algorithm):
+    wrapper(main, algorithm)
 
-def main(stdscr):
+def main(stdscr, algorithm):
     stdscr.clear()
 
-    algorithm = "radixlsd"
     florets = 300
 
     array = []
@@ -64,4 +62,5 @@ def main(stdscr):
     stdscr.refresh()
     stdscr.getkey()
 
-wrapper(main)
+def degrees_to_radians(angle):
+    return angle * (math.pi / 180)
