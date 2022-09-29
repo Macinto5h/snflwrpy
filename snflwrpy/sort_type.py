@@ -7,6 +7,7 @@ from enum import Enum
 class SortType(Enum):
     """Enum representing all available sorting algorithms."""
 
+    BOGO = 'bogo'
     BUBBLE = 'bubble'
     COCKTAIL = 'cocktail'
     GNOME = 'gnome'
