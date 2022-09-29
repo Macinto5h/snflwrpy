@@ -7,11 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 ### Changed
-- Rename project from `vogel-sorter` to `snflwrpy`
 ### Deprecated
 ### Removed
 ### Fixed
 ### Security
+
+## [1.0.0] - 2022-09-29
+### Added
+- Bogosort
+- `-f` and `--floret-count` arguments for CLI
+### Changed
+- Project name from `vogel-sorter` to `snflwrpy`
+- Visualization to be built with curses instead of tkinter
 
 ## [0.2.0] - 2022-09-11
 ### Changed
