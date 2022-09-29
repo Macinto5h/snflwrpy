@@ -12,7 +12,8 @@ def cli():
     """Command line interface to run the snflwrpy application."""
 
     parser = argparse.ArgumentParser(description=__app_description__)
-    parser.add_argument('-a', '--algorithm', choices=SortType.get_values(), dest='algorithm')
+    parser.add_argument('-a', '--algorithm', choices=SortType.get_values(), dest='algorithm', default=SortType.INSERTION.value)
+    parser.add_argument('-f', '--floret-count', type=int, dest='floret_count', default=50)
     parser.add_argument('-v', '--version', action='version', version=__app_version__)
 
     args = parser.parse_args()

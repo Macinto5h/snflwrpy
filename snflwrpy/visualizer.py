@@ -9,8 +9,7 @@ CONSTANT_SCALING_FACTOR = 137.508
 TITLE_TEXT = f"{__app_name__} {__app_version__}"
 
 def visualizer_start(stdscr, args):
-    florets = 300
-    array = build_shuffled_array(florets)
+    array = build_shuffled_array(args.floret_count)
     sorter = sorter_factory(args.algorithm, array)
     start_time = time.time()
     iterations = 0
@@ -19,7 +18,7 @@ def visualizer_start(stdscr, args):
         iterations += 1
         sorter.next()
 
-        stats_text = f"algorithm: {args.algorithm} | florets: {florets} | iterations: {iterations} | time: {round(time.time() - start_time, 2)} seconds"
+        stats_text = f"algorithm: {args.algorithm} | florets: {args.floret_count} | iterations: {iterations} | time: {round(time.time() - start_time, 2)} seconds"
         draw(stdscr, stats_text, sorter._unsorted_array)
 
     stdscr.getkey()
