@@ -7,10 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 ### Changed
+- README development notes to use new project name
+- Repo URL in pyproject.toml to new repo address
 ### Deprecated
 ### Removed
 ### Fixed
 ### Security
+- Dependencies upgraded
 
 ## [1.0.0] - 2022-09-29
 ### Added
