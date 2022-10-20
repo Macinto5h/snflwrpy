@@ -13,6 +13,7 @@ class SortType(Enum):
     GNOME = 'gnome'
     INSERTION = 'insertion'
     RADIX_LSD = 'radixlsd'
+    SELECTION = 'selection'
 
     @classmethod
     def get_values(cls):

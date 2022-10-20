@@ -8,6 +8,7 @@ from snflwrpy.sorters.cocktail_sorter import CocktailSorter
 from snflwrpy.sorters.gnome_sorter import GnomeSorter
 from snflwrpy.sorters.insertion_sorter import InsertionSorter
 from snflwrpy.sorters.radix_lsd_sorter import RadixLSDSorter
+from snflwrpy.sorters.selection_sorter import SelectionSorter
 from snflwrpy.sort_type import SortType
 
 def test_sorter_factory_returns_bogo_sorter_when_requested():
@@ -51,3 +52,10 @@ def test_sorter_factory_returns_radix_lsd_sorter_when_requested():
     sorter_name = SortType.RADIX_LSD.value
     received_sorter = sorter_factory(sorter_name, [1])
     assert isinstance(received_sorter, RadixLSDSorter)
+
+def test_sorter_factory_returns_seletion_sorter_when_requested():
+    """Test sorter factory returns selection sorter when requested."""
+
+    sorter_name = SortType.SELECTION.value
+    received_sorter = sorter_factory(sorter_name, [1])
+    assert isinstance(received_sorter, SelectionSorter)

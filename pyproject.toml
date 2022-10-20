@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "snflwrpy"
-version = "1.0.0"
+version = "1.1.0"
 description = "Visually demonstrates the function of sorting algorithms using Vogel's Fibonacci model."
 authors = ["Macallan Camara <44030647+Macinto5h@users.noreply.github.com>"]
 license = "MIT"
