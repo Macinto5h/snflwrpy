@@ -10,16 +10,12 @@ class BubbleSorter(AbstractSorter):
         self._swapped = False
 
     def next(self):
-        self._swap_elements_if_needed()
+        self._swap_if_needed()
         self._update_index_and_sorted_status()
 
-    def _swap_elements_if_needed(self):
-        expected_smaller_element = self._unsorted_array[self._sort_index - 1]
-        expected_larger_element = self._unsorted_array[self._sort_index]
-
-        if expected_smaller_element > expected_larger_element:
-            self._unsorted_array[self._sort_index - 1] = expected_larger_element
-            self._unsorted_array[self._sort_index] = expected_smaller_element
+    def _swap_if_needed(self):
+        if self._unsorted_array[self._sort_index - 1] > self._unsorted_array[self._sort_index]:
+            self._swap(self._sort_index - 1, self._sort_index)
             self._swapped = True
 
     def _update_index_and_sorted_status(self):
