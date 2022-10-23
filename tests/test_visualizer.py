@@ -1,7 +1,6 @@
 """Test suite for the visualizer"""
-from snflwrpy.visualizer import *
-from snflwrpy import __app_name__, __app_version__
 from chancepy import Chance
+from snflwrpy.visualizer import *
 
 def test_build_shuffled_array_returns_array_with_provided_item_count():
     """Test build shuffled array returns array with provided item count"""
