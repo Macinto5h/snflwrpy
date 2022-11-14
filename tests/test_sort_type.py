@@ -13,7 +13,8 @@ def test_sort_type_returns_list_of_all_values_when_called():
         SortType.GNOME.value,
         SortType.INSERTION.value,
         SortType.RADIX_LSD.value,
-        SortType.SELECTION.value
+        SortType.SELECTION.value,
+        SortType.STOOGE.value
     ]
 
     assert SortType.get_values() == expected_list

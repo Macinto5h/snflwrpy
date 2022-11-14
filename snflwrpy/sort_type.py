@@ -14,6 +14,7 @@ class SortType(Enum):
     INSERTION = 'insertion'
     RADIX_LSD = 'radixlsd'
     SELECTION = 'selection'
+    STOOGE = 'stooge'
 
     @classmethod
     def get_values(cls):
